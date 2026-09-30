@@ -33,6 +33,8 @@ done)
 [ -z "$_gd" ] && echo "video-lens-gallery skill not found — install it first: npx skills add kar2phi/video-lens" && exit 1
 ```
 
+If the loop finds nothing, this skill was installed somewhere else (for example, uploaded to Claude or Cowork). Use the `scripts` folder next to this SKILL.md instead (its base directory is shown when the skill loads) and run the same command with that path.
+
 ## Step 2 — Backfill metadata (only if requested)
 
 If the user's request mentions "backfill", run:

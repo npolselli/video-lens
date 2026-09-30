@@ -54,6 +54,8 @@ Run preflight, then read the prefixed lines from its stdout. Save `VIDEO_ID`, `L
 _sd=$(for d in "${CLAUDE_PROJECT_DIR:-$PWD}/.claude" ~/.agents ~/.claude ~/.copilot ~/.gemini ~/.cursor ~/.windsurf ~/.opencode ~/.codex; do [ -d "$d/skills/video-lens/scripts" ] && echo "$d/skills/video-lens/scripts" && break; done); [ -z "$_sd" ] && echo "Scripts not found — install from github.com/kar2phi/video-lens (see Bundled scripts above)" && exit 1; python3 "$_sd/preflight.py" -- "$USER_INPUT"
 ```
 
+If the loop finds nothing, this skill was installed somewhere else (for example, uploaded to Claude or Cowork). Use the `scripts` folder next to this SKILL.md instead (its base directory is shown when the skill loads) and run the same command with that path.
+
 Substitute `$USER_INPUT` with the user's URL/ID and any language hint as a single argument (preflight splits internally on the space).
 
 - On `ERROR:SHORTS_NOT_SUPPORTED`: report the limitation and stop.
